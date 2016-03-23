@@ -1,0 +1,256 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+html, body {
+	margin: 0 auto;
+	background-image: url(slike/dsc_0068.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	height: 100%;
+	color: white;
+	font-family: "Ubuntu";
+}
+
+#zaglavlje {
+	margin: 0px 0px 0px 0px;
+	float: left;
+	height: 100px;
+	width: 100px;
+    padding: 25px 25px 25px 25px;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#logotip {
+	margin: 1px 0px 0px 0px;
+	height: auto;
+	width: auto;
+	color: white;
+	font-size: 16pt;
+	font-stretch: extra-condensed;
+	font-weight: lighter;
+	font-family: 'Ubuntu';
+	text-align: center;
+}
+
+#meni {
+	margin-top: 0px;
+    padding: 25px 25px 25px 25px;
+	width: auto;
+	height: auto;
+	float: left;
+}
+
+#meni ul {
+    background-color: white;
+	list-style: none;
+	padding-left: 0%;
+}
+
+#meni a {
+    background-color: white;
+	text-decoration: none;
+	color: black;
+}
+
+#meni a:hover {
+	color: black;
+}
+
+.meni-stavka {
+	margin-top: -15px;
+	margin-bottom: 23px;
+    background-color: white;
+	display: block;
+	color: black;
+	padding-left: 15px;
+	height: 25px;
+	width: 175px;
+	text-align: left;
+	font-size: 12pt;
+	text-decoration: none;
+	font-family: "Ubuntu";
+}
+
+.meni-stavka:hover {
+	background-color: white;	
+}
+
+#sadrzaj {
+	border: 1px solid white;
+    background-color: white;
+	color: black;
+	margin: 20px 0 20px 25px;
+	padding: 20px 20px 20px 20px;
+	float: left;
+	width: auto;
+	height: auto;
+	font-family: "Ubuntu";
+	overflow-y: scroll;
+}
+
+table, th, tr, td {
+	font-family: 'Ubuntu';
+	border: 1px solid lightgray;
+	border-collapse: collapse;
+}
+
+th, tr, td {
+	padding: 15px;
+}
+
+.parni-red {
+	background-color: #f0f0f0;
+}
+
+.novost {
+	display: block;
+	margin-bottom: 10px;
+	padding: 10px 20px 10px 20px;
+	max-width: 500px;
+	height: auto;
+	width: auto;
+	font-family: "Ubuntu";
+	background-color: white;
+	border: 1px solid lightgray;
+}
+
+.novost a {
+	color: #1a7d3e;
+	text-decoration: none;
+}
+
+.novost a:hover {
+	background-color: #1a7d3e;
+	color: white;
+}
+
+.komentari-na-novost {
+	display: flex;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	padding: 10px 20px 10px 20px;
+	max-width: 500px;
+	height: auto;
+	width: auto;
+	border: 1px solid lightgray;
+}
+
+.linkovi {
+	padding-left: 20px;
+	margin: 0 auto;
+	list-style-image: url(slike/ba.gif);
+	font-family: 'Ubuntu';
+}
+
+.linkovi a {
+	color: black;
+	text-decoration: none;
+}
+
+.linkovi a:hover {
+    list-style-image: url(slike/ba.gif);
+}
+
+.naslov-novosti {
+	width: 100%;
+	color: #1a7d3e;
+	font-family: "Ubuntu";
+	font-weight: bold;
+	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+}
+
+.datum-i-vrijeme-novosti {
+	color: red;
+	font-family: "Ubuntu";
+	font-size: 9pt;
+	line-height: normal;
+}
+
+.datum-i-vrijeme-novosti a {
+	color: red;
+	text-decoration: none;
+}
+
+.datum-i-vrijeme-novosti a:hover {
+	text-decoration: underline;
+}
+
+.tekst-novosti {
+	color: #1a7d3e;
+	margin: 10px 0 0 0;
+}
+
+.tekst-novosti a {
+	color: #1a7d3e;
+	text-decoration: none;
+}
+
+.tekst-novosti a:hover {
+	background-color: #1a7d3e;
+	color: white;
+}
+
+.news-image {
+	width: 100%;
+	height: auto;
+	float: left;
+	border: 1px solid #1a7d3e;
+}
+
+#dno {
+    background-color: white;
+    color: black;
+	margin: 20px 0 0 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: auto;
+	float: left;
+	text-align: center;
+	font-family: "Ubuntu";
+	font-size: 10pt;
+}
+
+.stavka_forme {
+	font-family: 'Ubuntu';
+}
+
+#posalji {
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+#poruka {
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+	font-size: 16pt;
+}
+
+.obavezno {
+	font-family: 'Ubuntu';
+	color: red;
+}
+
+.greska {
+	font-family: 'Ubuntu';
+	color: red;
+	font-weight: bold;
+	font-size: 10pt;
+}
+
+.prvi-blok {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}

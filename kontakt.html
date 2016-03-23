@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="stil.css">
+		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<title>GoCA—Gallery of Contemporary Art</title>
+	</head>
+	<body>
+		
+		<div id="zaglavlje">
+			<div class="prvi-blok"></div>
+			<div id="logotip">GoCA</div>
+		</div>
+		
+		<nav id="meni">
+			<div class="meni-stavka">
+				<ul>
+					<li><a href="index.html"><p>VIJESTI</p></a></li>
+				</ul>
+			</div>
+			<div class="meni-stavka">
+				<ul>
+					<li><a href="telefonski-brojevi.html"><p>TELEFONSKI BROJEVI</p></a></li>
+				</ul>
+			</div>
+			<div class="meni-stavka">
+				<ul>					
+					<li><a href="linkovi.html"><p>LINKOVI</p></a></li>
+				</ul>
+			</div>
+			<div class="meni-stavka">
+				<ul>
+					<li><a href="kontakt.html"><p>KONTAKT</p></a></li>
+				</ul>
+			</div>
+		</nav>
+		
+		<div id="sadrzaj">
+			<form id="forma" name="forma" action="kontakt.html" method="post" onsubmit="validacijaForme(); return false;">				
+				
+				<div class="stavka_forme">
+					<label for="imeiprezime">Ime i prezime: </label><br>
+					<input type="text" id="imeiprezime" name="imeiprezime" size="30" onblur="provjeriImeIPrezime()">
+					<label for="imeiprezime" id="greska1" class="greska"></label>
+				</div>
+				<div class="stavka_forme">
+					<label for="email">Email: </label><br>
+					<input type="text" id="email" name="email" size="30" onblur="provjeriEmail()">
+					<label for="email" id="greska2" class="greska"></label>
+				</div>
+				<div class="stavka_forme">
+					<label for="email_potvrda">Potvrdi email: </label><br>
+					<input type="text" id="email_potvrda" name="email_potvrda" size="30" onblur="crossValidirajEmail()">
+					<label for="email_potvrda" id="greska4" class="greska"></label>
+				</div>
+				<div class="stavka_forme">
+					<label for="telefon">Telefon:</label><br>
+					<input type="text" id="telefon" name="telefon" size="30">
+				</div>
+				<div class="stavka_forme">
+					<label for="komentar">Komentar: </label><br>
+					<textarea id="komentar" name="komentar" rows="10" cols="40" onblur="provjeriKomentar()"></textarea>
+					<label for="email" id="greska3" class="greska"></label>
+				</div>
+				<input type="submit" id="posalji" name="posalji" value="Pošalji">
+			</form>
+		</div>
+		
+		<div id="dno">© 2016 GoCA</div>
+	</body>
+</html>

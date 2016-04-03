@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="stil.css">
 		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <script src="validacijaForme.js" type="text/javascript"></script>
 		<title>GoCA—Gallery of Contemporary Art</title>
 	</head>
 	<body>
@@ -42,26 +43,23 @@
 				<div class="stavka_forme">
 					<label for="imeiprezime">Ime i prezime: </label><br>
 					<input type="text" id="imeiprezime" name="imeiprezime" size="30" onblur="provjeriImeIPrezime()">
-					<label for="imeiprezime" id="greska1" class="greska"></label>
+					
 				</div>
 				<div class="stavka_forme">
 					<label for="email">Email: </label><br>
 					<input type="text" id="email" name="email" size="30" onblur="provjeriEmail()">
-					<label for="email" id="greska2" class="greska"></label>
 				</div>
 				<div class="stavka_forme">
 					<label for="email_potvrda">Potvrdi email: </label><br>
 					<input type="text" id="email_potvrda" name="email_potvrda" size="30" onblur="crossValidirajEmail()">
-					<label for="email_potvrda" id="greska4" class="greska"></label>
 				</div>
 				<div class="stavka_forme">
-					<label for="telefon">Telefon:</label><br>
-					<input type="text" id="telefon" name="telefon" size="30">
+					<label for="telefon">Telefon (Npr. 123456789):</label><br>
+					<input type="text" id="telefon" name="telefon" size="30" onblur="provjeriTelefon()">
 				</div>
 				<div class="stavka_forme">
 					<label for="komentar">Komentar: </label><br>
 					<textarea id="komentar" name="komentar" rows="10" cols="40" onblur="provjeriKomentar()"></textarea>
-					<label for="email" id="greska3" class="greska"></label>
 				</div>
 				<input type="submit" id="posalji" name="posalji" value="Pošalji">
 			</form>

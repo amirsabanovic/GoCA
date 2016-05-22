@@ -2,7 +2,7 @@
 
 html, body {
 	margin: 0 auto;
-	background-image: url(slike/dsc_0068.jpg);
+	background-image: url(slike/art.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -12,12 +12,29 @@ html, body {
 	font-family: "Ubuntu";
 }
 
+hr {
+	margin: 0 auto;
+}
+
 #zaglavlje {
 	margin: 0px 0px 0px 0px;
 	float: left;
 	height: 100px;
 	width: 100px;
     padding: 25px 25px 25px 25px;
+}
+
+.prvi-blok {
+	padding-right: 5px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+	
+}
+
+.prvi-blok p {
+	float: right;
+	color: black;
 }
 
 a {
@@ -30,13 +47,14 @@ a:hover {
 }
 
 #logotip {
-	margin: 1px 0px 0px 0px;
+	border: 1px black;
+	margin: 0px 0px 0px 0px;
 	height: auto;
 	width: auto;
-	color: white;
+	color: color;
 	font-size: 16pt;
 	font-stretch: extra-condensed;
-	font-weight: lighter;
+	font-weight: initial;
 	font-family: 'Ubuntu';
 	text-align: center;
 }
@@ -85,10 +103,10 @@ a:hover {
 }
 
 #sadrzaj {
-	border: 1px solid white;
-    background-color: white;
+	/*border: 1px solid white;*/
+	background-color: white;
 	color: black;
-	margin: 20px 0 20px 25px;
+	margin: 0 0 0 0;
 	padding: 20px 20px 20px 20px;
 	float: left;
 	width: auto;
@@ -249,8 +267,61 @@ th, tr, td {
 	font-size: 10pt;
 }
 
-.prvi-blok {
-    width: 100px;
-    height: 100px;
-    background-color: white;
+#prijava {
+	float: right;
+	margin: 0 auto;
+	padding: 10px 25px 10px 25px;
+}
+
+#panel {
+	height: auto;
+	background-color: lightslategray;
+	padding: 10px 25px 10px 25px;
+}
+
+#panel h3 {
+	text-align: center;
+}
+
+#greskaprijava {
+	margin: 0 auto;
+	padding: 10px 25px 10px 25px;
+	background-color: red;
+}
+
+#uspjesnaprijava {
+	margin: 0 auto;
+	padding: 10px 25px 10px 25px;
+	background-color: darkblue;
+}
+
+#panel-opcije {
+	text-align: center;
+	padding: 10px 0 10px 0;
+}
+
+#panel-lista {
+	width: auto;
+	height: auto;
+	padding: 10px 25px 10px 25px;
+}
+
+.panel-stavka {
+	width: auto;
+	margin-bottom: 20px;
+}
+
+.panel-stavka-vrijeme {
+	display: inline-block;
+	padding: 0 5px 0 5px;
+	width: 150px;
+	background-color: red;
+	color: white;
+}
+
+.panel-stavka-vrijednost {
+	padding: 0 5px 0 5px;
+	background-color: white;
+	color: #415895;
+	width: 300px; 
 }

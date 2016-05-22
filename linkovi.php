@@ -10,9 +10,10 @@
 		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 		<script src="adminPanel.js" type="text/javascript"></script>
 		<script src="validacijaVijesti.js" type="text/javascript"></script>
-		<title>Vijesti | GoCA</title>
+		<title>Linkovi | GoCA</title>
 	</head>
 	<body onload="hideLoginForm();">
+		
 		
 		<?php
 			
@@ -97,10 +98,10 @@
 				echo $prijava;
 			}
 ?>
+		
 		<div id="zaglavlje">
-			<div class="prvi-blok">
-				<p id="logotip"><br><br><br>GoCA</p>
-			</div>
+			<div class="prvi-blok"></div>
+			<div id="logotip">GoCA</div>
 		</div>
 		
 		<nav id="meni">
@@ -127,32 +128,23 @@
 		</nav>
 		
 		<div id="sadrzaj">
-			<div id="novost-1" class="novost">
-				<small class="datum-i-vrijeme-novosti">4. septembar 2015, 9:30 / Amir Šabanović</small>
-				<h2 class="naslov-novosti">Obilježena godišnjica od tragične smrti pet rudara u jami Raspotočje</h2>
-				<p class="tekst-novosti">Danas je u organizaciji RMU Zenica obilježena prva godišnjica pogibije pet rudara u jami 
-					Raspotočje kada su usljed gorskog udara u jami ostala zarobljena 34 rudara u septembru 2014. godine, piše 
-					bh. novinska agencija Patria.<br><br>Nažalost za pet rudara Fejzu Isakovića, Mehemeda Dizdarevića, Mehmedaliju 
-					Halilovića, Fahira Halača i Hajrudin Bradarca bilo je prekasno.
-				</p>
-			</div>
-			<div id="novost-2" class="novost">
-				<small class="datum-i-vrijeme-novosti">5. septembar 2015, 4:37 / Amir Šabanović</small>
-				<h2 class="naslov-novosti">Visočki predstavnik na Sarajevo Youth Film festivalu je film “Mašta”, TV Furda produkcije</h2>
-				<p class="tekst-novosti">Nakon što je naš portal, prije gotovo dva mjeseca, premijerno promovirao film “Mašta”, najnoviji 
-					projekat mlade visočke produkcije TV Furda, ovog puta čast nam je obavijestiti javnost da je ovaj film ušao u 
-					konkurenciju za glavnu nagradu Sarajevo Youth Film Festivala.
-				</p>
-			</div>
-			<div id="novost-3" class="novost">
-				<small class="datum-i-vrijeme-novosti">5. septembar 2015, 4:39 / Amir Šabanović</small>
-				<h2 class="naslov-novosti">Prva liga FBiH: Trećeplasirana Bosna gostuje kod devetoplasirane Zvijezde</h2>
-				<p class="tekst-novosti">Nakon pobjede u prošlom kolu na domaćem terenu NK Bosna u petom kolu Prve lige FBiH gostuje 
-					kod ekipe NK Zvijezda. Bit će to duel trećeplasirane i devetoplasirane ekipe na tabeli. Bosna na ovo gostovanje 
-					putuje sa 9 bodova i gol razlikom 6:2, dok je ekipa Zvijezde iz četiri prethodna kola osvojila 5 bodova uz 
-					negativnu gol razliku 3:4.
-				</p>
-			</div>
+			<ul class="linkovi">
+				<li>
+					<a href="http://www.predsjednistvobih.ba/Language.aspx">Predsjedništvo Bosne i Hercegovine</a>
+				</li>
+			</ul>
+            <ul class="linkovi">
+				<li>
+					<a href="http://www.visoko.co.ba/">Visoko.co.ba</a>
+				</li>
+			</ul>
+            <ul class="linkovi">
+				<li>
+					<a href="http://www.fbihvlada.gov.ba/">Vlada Federacije Bosne i Hercegovine</a>
+				</li>
+			</ul>
 		</div>
+		
+		<!--<div id="dno">© 2016 GoCA</div>-->
 	</body>
 </html>

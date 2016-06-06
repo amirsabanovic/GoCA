@@ -103,7 +103,6 @@ a:hover {
 }
 
 #sadrzaj {
-	/*border: 1px solid white;*/
 	background-color: white;
 	color: black;
 	margin: 0 0 0 0;
@@ -142,12 +141,12 @@ th, tr, td {
 }
 
 .novost a {
-	color: #1a7d3e;
+	color: black;
 	text-decoration: none;
 }
 
 .novost a:hover {
-	background-color: #1a7d3e;
+	background-color: black;
 	color: white;
 }
 
@@ -180,7 +179,7 @@ th, tr, td {
 
 .naslov-novosti {
 	width: 100%;
-	color: #1a7d3e;
+	color: black;
 	font-family: "Ubuntu";
 	font-weight: bold;
 	padding: 0px 0px 0px 0px;
@@ -204,17 +203,17 @@ th, tr, td {
 }
 
 .tekst-novosti {
-	color: #1a7d3e;
+	color: black;
 	margin: 10px 0 0 0;
 }
 
 .tekst-novosti a {
-	color: #1a7d3e;
+	color: black;
 	text-decoration: none;
 }
 
 .tekst-novosti a:hover {
-	background-color: #1a7d3e;
+	background-color: purple;
 	color: white;
 }
 
@@ -222,7 +221,7 @@ th, tr, td {
 	width: 100%;
 	height: auto;
 	float: left;
-	border: 1px solid #1a7d3e;
+	border: 1px solid black;
 }
 
 #dno {

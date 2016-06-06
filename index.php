@@ -53,7 +53,11 @@
 									<textarea rows="4" cols="30" id="vijest-ukratko" name="vijest-ukratko" onblur="provjeriUkratko()"></textarea><br>
 									
 									<label for="vijest-sadrzaj">Sadržaj vijesti:</label>
-									<textarea rows="4" cols="50" id="vijest-sadrzaj" name="vijest-sadrzaj" onblur="provjeriSadrzaj()"></textarea>
+									<textarea rows="4" cols="50" id="vijest-sadrzaj" name="vijest-sadrzaj" onblur="provjeriSadrzaj()"></textarea><br>
+
+									<label for="zabrana-komentarisanja">Zabraniti komentarisanje? </label>
+									<input type="radio" name="zabrana-komentarisanja" value="male"><br>
+
 									<button type="button" onclick="validacijaVijesti();">Dodaj</button>
 								
 								</form>
@@ -72,7 +76,33 @@
 				echo $panel.'<hr>';
 			}
 			else if (isset($_REQUEST['korisnickoime']) && isset($_REQUEST['lozinka'])) {
-				$korisnickoime = htmlspecialchars($_REQUEST['korisnickoime'], ENT_QUOTES, 'UTF-8');
+				
+				$connection = new PDO("mysql:dbname=goca;host=localhost;charset=utf8", "goca", "goca");
+			    $query = $connection->prepare("SELECT korisnik, lozinka FROM korisnici WHERE korisnik=?");
+			   	$query->execute(array($_REQUEST['korisnickoime']));
+			    $match = $query->fetch(PDO::FETCH_ASSOC);
+			    if (!$match || (md5($_REQUEST['lozinka']) != $match['lozinka'])) {
+			    	echo '<div id="greskaprijava"><b>Greška:</b> Korisnički podaci nevalidni!</div>';
+					echo $prijava;
+			    }
+			    else {
+					$_SESSION['username'] = $_REQUEST['korisnickoime'];
+				    $_SESSION['password'] = $_REQUEST['lozinka'];
+					echo '<div id="prijava">
+								<form method="POST" action="index.php" id="odjavaforma">
+									Prijavljeni ste kao: <b>'.htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8').'</b>
+									<input type="submit" name="odjava" value="ODJAVI SE">
+								</form>
+					  		</div>';
+					$query = $connection->prepare("SELECT admin FROM korisnici WHERE korisnik=?");
+					$query->execute(array($_SESSION['username']));
+					$result = $query->fetchColumn();
+					if ($result == 1) {
+						echo $panel;
+					}
+				}
+				
+				/*$korisnickoime = htmlspecialchars($_REQUEST['korisnickoime'], ENT_QUOTES, 'UTF-8');
 				$lozinka = htmlspecialchars($_REQUEST['lozinka'], ENT_QUOTES, 'UTF-8');
 				$read = fopen('adminData.txt','r');
 				if ($korisnickoime != substr(fgets($read), 0, -2) || md5($lozinka) != fgets($read)) {
@@ -91,7 +121,7 @@
 								</form>
 					  		</div>';
 					echo $panel.'<hr>';
-				}
+				}*/
 			}
 			else {
 				echo $prijava;
@@ -127,7 +157,35 @@
 		</nav>
 		
 		<div id="sadrzaj">
-			<div id="novost-1" class="novost">
+<?php			
+			$connection = new PDO("mysql:dbname=goca;host=localhost;charset=utf8", "goca", "goca");
+	$connection->exec("set names utf8");
+	$query = $connection->query("SELECT * FROM vijesti ORDER BY datum DESC");
+	if (!$query) {
+			        	$error = $connection->errorInfo();
+			        	print "SQL greška: ".$error[2];
+			        	exit();
+	}
+	foreach ($query as $news) {
+		$commentscount = $connection->query("SELECT COUNT(*) FROM komentari WHERE vijest=".$news['id']."");
+		$count = $commentscount->fetchColumn();
+		echo '<div class="novost">
+				<div class="news-text">
+					<small class="datum_vrijeme_novosti">
+						'.date("d.m.Y. h:i:s", strtotime($news['datum'])).' / Autor: '.$news['autor'].' / Komentari ('.$count.')
+						</small>
+					<h2 class="naslov_novosti">'.$news['naslov'].'</h2>
+				<p class="tekst-novosti">'.$news['tekst'].' ';
+		if ($news['detaljnije'] != "") {
+			echo '<a href="#clanak'.$news['id'].'" onclick="return changeHash("#clanak'.$news['id'].'"); return false;">Detaljnije...</a>
+				</p>
+				<p class="detaljnije" hidden>'.$news['detaljnije'].'</p>';
+		}
+		echo '</div></div>';
+	}
+
+	?>		
+			<!--<div id="novost-1" class="novost">
 				<small class="datum-i-vrijeme-novosti">4. septembar 2015, 9:30 / Amir Šabanović</small>
 				<h2 class="naslov-novosti">Obilježena godišnjica od tragične smrti pet rudara u jami Raspotočje</h2>
 				<p class="tekst-novosti">Danas je u organizaciji RMU Zenica obilježena prva godišnjica pogibije pet rudara u jami 
@@ -152,7 +210,9 @@
 					putuje sa 9 bodova i gol razlikom 6:2, dok je ekipa Zvijezde iz četiri prethodna kola osvojila 5 bodova uz 
 					negativnu gol razliku 3:4.
 				</p>
-			</div>
+			</div>-->
+		
+		
 		</div>
 	</body>
 </html>
